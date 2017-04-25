@@ -1,7 +1,7 @@
 {
   "name": "expect-js-to-assert",
   "description": "A jscodeshift codemod that transforms from expect.js to Node assert",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": {
     "name": "Takuto Wada",
     "email": "takuto.wada@gmail.com",
