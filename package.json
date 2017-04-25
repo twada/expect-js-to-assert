@@ -1,0 +1,48 @@
+{
+  "name": "expect-js-to-assert",
+  "description": "A jscodeshift codemod that transforms from expect.js to Node assert",
+  "version": "0.0.0",
+  "author": {
+    "name": "Takuto Wada",
+    "email": "takuto.wada@gmail.com",
+    "url": "https://github.com/twada"
+  },
+  "bugs": "https://github.com/twada/expect-js-to-assert/issues",
+  "devDependencies": {
+    "jscodeshift": "^0.3.30",
+    "mocha": "^3.0.0",
+    "semistandard": "^11.0.0",
+    "snazzy": "^7.0.0"
+  },
+  "files": [
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "transform.js",
+    "package.json"
+  ],
+  "homepage": "https://github.com/twada/expect-js-to-assert",
+  "keywords": [
+    "assert",
+    "codemod",
+    "expect.js",
+    "jscodeshift"
+  ],
+  "license": "MIT",
+  "main": "transform.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/twada/expect-js-to-assert.git"
+  },
+  "scripts": {
+    "fmt": "semistandard --fix",
+    "lint": "semistandard --verbose | snazzy",
+    "test": "npm run lint && mocha test"
+  },
+  "semistandard": {
+    "globals": [
+      "describe",
+      "it"
+    ]
+  }
+}
