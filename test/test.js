@@ -172,3 +172,47 @@ describe('.within(start,finish)', function () {
     after: 'assert(two < five || ten < two)'
   });
 });
+
+describe('.throw([errorLike])', function () {
+  testTransform({
+    before: 'expect(func).to.throw()',
+    after: 'assert.throws(func)'
+  });
+  testTransform({
+    before: 'expect(func).to.not.throw()',
+    after: 'assert.doesNotThrow(func)'
+  });
+  testTransform({
+    before: 'expect(func).to.throw(/error message/)',
+    after: 'assert.throws(func, /error message/)'
+  });
+  testTransform({
+    before: 'expect(func).to.not.throw(/error message/)',
+    after: 'assert.doesNotThrow(func, /error message/)'
+  });
+  testTransform({
+    before: 'expect(func).to.throw(function(e) {})',
+    after: 'assert.throws(func, function(e) {})'
+  });
+  testTransform({
+    before: 'expect(func).to.not.throw()',
+    after: 'assert.doesNotThrow(func)'
+  });
+
+  testTransform({
+    before: 'expect(func).to.throwError()',
+    after: 'assert.throws(func)'
+  });
+  testTransform({
+    before: 'expect(func).to.not.throwError()',
+    after: 'assert.doesNotThrow(func)'
+  });
+  testTransform({
+    before: 'expect(func).to.throwException()',
+    after: 'assert.throws(func)'
+  });
+  testTransform({
+    before: 'expect(func).to.not.throwException()',
+    after: 'assert.doesNotThrow(func)'
+  });
+});
