@@ -10,7 +10,8 @@ var MATCHER_METHODS = [
   'length',
   'above', 'greaterThan',
   'below', 'lessThan',
-  'within'
+  'within',
+  'throw', 'throwError', 'throwException'
 ];
 var FLAGS = [
   'not'
@@ -153,6 +154,14 @@ module.exports = function transform (file, api, options) {
             j.binaryExpression('<=', subject, path.value.arguments[1])
           ));
         }
+      case 'throw':
+      case 'throwError':
+      case 'throwException':
+        return j.callExpression(
+          j.memberExpression(
+            j.identifier('assert'),
+            negation ? j.identifier('doesNotThrow') : j.identifier('throws')
+          ), [subject].concat(path.value.arguments));
       default:
         return assert(false, 'cannot be here');
     }
