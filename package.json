@@ -8,6 +8,12 @@
     "url": "https://github.com/twada"
   },
   "bugs": "https://github.com/twada/expect-js-to-assert/issues",
+  "contributors": [
+    {
+      "name": "Haoliang Gao",
+      "url": "https://github.com/popomore"
+    }
+  ],
   "devDependencies": {
     "jscodeshift": "^0.3.30",
     "mocha": "^3.0.0",
