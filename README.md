@@ -35,7 +35,7 @@ FEATURES
 - [ ] `.property(name, [value])`
 - [ ] `.key(name)`
 - [ ] `.keys(...name)`
-- [ ] `.throw([errMatcher])` (alias `.throwException`, `.throwError`)
+- [x] `.throw([errorMatcher])` (alias `.throwException`, `.throwError`)
 - [x] `.within(start, finish)`
 - [x] `.above(value)` (alias `.greaterThan`)
 - [x] `.below(value)` (alias `.lessThan`)

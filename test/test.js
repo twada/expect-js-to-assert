@@ -173,7 +173,7 @@ describe('.within(start,finish)', function () {
   });
 });
 
-describe('.throw([errorLike])', function () {
+describe('.throw([errorMatcher])', function () {
   testTransform({
     before: 'expect(func).to.throw()',
     after: 'assert.throws(func)'
@@ -198,7 +198,6 @@ describe('.throw([errorLike])', function () {
     before: 'expect(func).to.not.throw()',
     after: 'assert.doesNotThrow(func)'
   });
-
   testTransform({
     before: 'expect(func).to.throwError()',
     after: 'assert.throws(func)'
